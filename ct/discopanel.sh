@@ -29,7 +29,10 @@ function update_script() {
     exit
   fi
 
-  setup_docker
+  if ! setup_docker; then
+    msg_error "Docker failed"
+    exit 1
+  fi
 
   if check_for_gh_release "discopanel" "nickheyer/discopanel"; then
     msg_info "Stopping Service"

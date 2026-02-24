@@ -25,7 +25,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/opt/discopanel
-ExecStart=/opt/discopanel/discopanel-linux-amd64.tar.gz
+ExecStart=/opt/discopanel/discopanel-linux-amd64
 Restart=always
 
 [Install]
