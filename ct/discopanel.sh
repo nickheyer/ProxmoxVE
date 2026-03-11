@@ -41,7 +41,7 @@ function update_script() {
 
     msg_info "Creating Backup"
     mkdir -p /opt/discopanel_backup_temp
-    cp -r /opt/discopanel/data/* /opt/discopanel_backup_temp/.
+    cp -r /opt/discopanel/data/discopanel.db /opt/discopanel_backup_temp/discopanel.db
     msg_ok "Created Backup"
 
     msg_info "Setting up DiscoPanel"
@@ -52,7 +52,7 @@ function update_script() {
 
     msg_info "Restoring Data"
     mkdir -p /opt/discopanel/data
-    cp -r /opt/discopanel_backup_temp/* /opt/discopanel/data/.
+    cp -r /opt/discopanel_backup_temp/discopanel.db /opt/discopanel/data/discopanel.db
     rm -rf /opt/discopanel_backup_temp
     msg_ok "Restored Data"
 
