@@ -46,6 +46,8 @@ function update_script() {
 
     msg_info "Setting up DiscoPanel"
     CLEAN_INSTALL=1 fetch_and_deploy_gh_release "discopanel" "nickheyer/discopanel" "prebuild" "latest" "/opt/discopanel" "discopanel-linux-amd64.tar.gz"
+    # Note: Symlink is for v1 systemd service exec support
+    ln -s /opt/discopanel/discopanel-linux-amd64 /opt/discopanel/discopanel
     msg_info "Setup DiscoPanel"
 
     msg_info "Restoring Data"
