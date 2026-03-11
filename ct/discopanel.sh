@@ -52,7 +52,7 @@ function update_script() {
 
     msg_info "Restoring Data"
     mkdir -p /opt/discopanel/data
-    cp -a /opt/discopanel_backup_temp/. /opt/discopanel/data/
+    cp -r /opt/discopanel_backup_temp/* /opt/discopanel/data/.
     rm -rf /opt/discopanel_backup_temp
     msg_ok "Restored Data"
 
